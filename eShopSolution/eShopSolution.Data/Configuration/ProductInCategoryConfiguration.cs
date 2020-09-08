@@ -14,14 +14,14 @@ namespace eShopSolution.Data.Configuration
             builder.HasKey(x => new { x.CategoryId, x.ProductId });
             builder.ToTable("ProductInCategories");
 
-            builder.HasOne(t => t.Product)
-                .WithMany(y => y.ProductInCategories)
-                .HasForeignKey(u => u.ProductId);
+            builder.HasOne(x => x.Product)
+                .WithMany(x => x.ProductInCategories)
+                .HasForeignKey(x => x.ProductId);
 
 
-            builder.HasOne(t => t.Category)
-                .WithMany(y => y.ProductInCategories)
-                .HasForeignKey(u => u.CategoryId);
+            builder.HasOne(x => x.Category)
+                .WithMany(x => x.ProductInCategories)
+                .HasForeignKey(x => x.CategoryId);
 
 
         }
